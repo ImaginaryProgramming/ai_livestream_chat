@@ -1,16 +1,15 @@
-# ai_live_chat
+# ai_livestream_chat
 
-A new Flutter project.
+A desktop app built in Flutter, which uses [Gemini](https://deepmind.google/technologies/gemini/) to make a fake livestream chat.
 
-## Getting Started
+Intended as a fun project, not as a replacement for a real live chat.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Setup
+1. Get your [Gemini API Key](https://makersuite.google.com/app/apikey).
+2. Create a file at `lib/key.dart` (ignored by `.gitignore`).
+3. Open `key.dart` and add this line:
+```dart
+const geminiApiKey = "API_KEY_HERE";`
+```
+4. Replace `API_KEY_HERE` with your API key.
+5. Run the app as a desktop build. ([How to run a Flutter app](https://docs.flutter.dev/get-started/test-drive#run-your-sample-flutter-app))
