@@ -1,5 +1,5 @@
-import 'package:ai_live_chat/key.dart';
-import 'package:ai_live_chat/widgets/ai_screen.dart';
+import 'package:ai_livestream_chat/key.dart';
+import 'package:ai_livestream_chat/widgets/ai_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

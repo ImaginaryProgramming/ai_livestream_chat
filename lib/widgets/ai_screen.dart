@@ -1,8 +1,8 @@
-import 'package:ai_live_chat/providers/auto_chat_provider.dart';
-import 'package:ai_live_chat/providers/gemini_chat_provider.dart';
-import 'package:ai_live_chat/providers/gemini_request_provider.dart';
-import 'package:ai_live_chat/providers/screenshot_list_provider.dart';
-import 'package:ai_live_chat/widgets/chat_message.dart';
+import 'package:ai_livestream_chat/providers/auto_chat_provider.dart';
+import 'package:ai_livestream_chat/providers/gemini_chat_provider.dart';
+import 'package:ai_livestream_chat/providers/gemini_request_provider.dart';
+import 'package:ai_livestream_chat/providers/screenshot_list_provider.dart';
+import 'package:ai_livestream_chat/widgets/chat_message.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

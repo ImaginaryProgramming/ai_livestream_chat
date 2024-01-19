@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:ai_live_chat/providers/screenshot_list_provider.dart';
+import 'package:ai_livestream_chat/providers/screenshot_list_provider.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

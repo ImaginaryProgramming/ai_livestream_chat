@@ -1,6 +1,6 @@
-import 'package:ai_live_chat/providers/gemini_chat_provider.dart';
-import 'package:ai_live_chat/providers/gemini_request_provider.dart';
-import 'package:ai_live_chat/providers/screenshot_list_provider.dart';
+import 'package:ai_livestream_chat/providers/gemini_chat_provider.dart';
+import 'package:ai_livestream_chat/providers/gemini_request_provider.dart';
+import 'package:ai_livestream_chat/providers/screenshot_list_provider.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'auto_chat_provider.g.dart';
