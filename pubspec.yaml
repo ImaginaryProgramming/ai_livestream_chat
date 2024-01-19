@@ -1,4 +1,4 @@
-name: ai_live_chat
+name: ai_livestream_chat
 description: Using Gemini AI to make a fake livestream chat.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
