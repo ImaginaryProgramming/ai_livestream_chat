@@ -3,6 +3,7 @@ import 'package:ai_livestream_chat/providers/gemini_chat_provider.dart';
 import 'package:ai_livestream_chat/providers/gemini_request_provider.dart';
 import 'package:ai_livestream_chat/providers/screenshot_list_provider.dart';
 import 'package:ai_livestream_chat/widgets/chat_message.dart';
+import 'package:ai_livestream_chat/widgets/chat_only_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -14,7 +15,6 @@ class AiScreen extends ConsumerStatefulWidget {
 }
 
 class _AiScreenState extends ConsumerState<AiScreen> {
-  final _chatScrollController = ScrollController();
   final _textController = TextEditingController();
 
   @override
@@ -48,9 +48,8 @@ class _AiScreenState extends ConsumerState<AiScreen> {
       body: ListView(
         padding: const EdgeInsets.all(24),
         children: [
-          // Note that this widget only seems to listen to the stream.
           Container(
-            color: Colors.black12,
+            color: const Color(0xff18181b),
             padding: const EdgeInsets.all(8),
             child: SizedBox(
               height: 200,
@@ -64,7 +63,6 @@ class _AiScreenState extends ConsumerState<AiScreen> {
                   );
                 },
                 itemCount: chatMessages.length,
-                controller: _chatScrollController,
                 reverse: true,
               ),
             ),
@@ -85,8 +83,17 @@ class _AiScreenState extends ConsumerState<AiScreen> {
                     ? const Icon(Icons.stop)
                     : const Icon(Icons.play_arrow),
               ),
-              // const SizedBox(width: 8),
-              IconButton.filled(
+              IconButton(
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const ChatOnlyScreen();
+                    },
+                  ),
+                ),
+                icon: const Icon(Icons.fullscreen),
+              ),
+              IconButton(
                 onPressed: () => ref.read(geminiChatProvider.notifier).reset(),
                 icon: const Icon(Icons.clear),
               ),

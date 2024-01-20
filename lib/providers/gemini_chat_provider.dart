@@ -8,7 +8,7 @@ part 'gemini_chat_provider.g.dart';
 
 @riverpod
 class GeminiChat extends _$GeminiChat {
-  static const _delayBetweenSpacedMessages = Duration(milliseconds: 500);
+  static const _delayBetweenSpacedMessages = Duration(milliseconds: 250);
 
   Future<void> sendMessage(String message, List<Uint8List> images) async {
     if (message.isEmpty) {

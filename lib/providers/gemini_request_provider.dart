@@ -2,7 +2,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'gemini_request_provider.g.dart';
 
-@riverpod
+@Riverpod(keepAlive: true)
 class GeminiRequest extends _$GeminiRequest {
   static const _defaultRequest = """
 You are a Twitch chatter.

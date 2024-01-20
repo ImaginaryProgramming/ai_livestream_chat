@@ -58,10 +58,13 @@ class _ChatMessageState extends State<ChatMessage> {
 
   @override
   Widget build(BuildContext context) {
-    return MarkdownBody(
-      data: widget.message,
-      styleSheet: MarkdownStyleSheet(
-        strong: TextStyle(color: usernameColor),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 4),
+      child: MarkdownBody(
+        data: widget.message,
+        styleSheet: MarkdownStyleSheet(
+          strong: TextStyle(color: usernameColor),
+        ),
       ),
     );
   }

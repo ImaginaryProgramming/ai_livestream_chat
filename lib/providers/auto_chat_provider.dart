@@ -12,7 +12,7 @@ part 'auto_chat_provider.g.dart';
 /// Use [start] and [stop] to toggle.
 @riverpod
 class AutoChat extends _$AutoChat {
-  static const _loopDelay = Duration(seconds: 3);
+  static const _loopDelay = Duration(seconds: 4);
 
   void start() {
     if (!state) {

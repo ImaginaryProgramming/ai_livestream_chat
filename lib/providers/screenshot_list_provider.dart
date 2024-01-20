@@ -9,7 +9,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 part 'screenshot_list_provider.g.dart';
 
-@riverpod
+@Riverpod(keepAlive: true)
 class ScreenshotList extends _$ScreenshotList {
   Future<void> takeScreenshot({
     CaptureMode captureMode = CaptureMode.screen,
@@ -38,7 +38,7 @@ class ScreenshotList extends _$ScreenshotList {
         filePath: imagePath,
         rawBytes: rawBytes,
       );
-      final compressedImage = await compressInQueue(ImageFileConfiguration(
+      final compressedImage = compress(ImageFileConfiguration(
         input: fileToCompress,
         config: const Configuration(jpgQuality: 50),
       ));

@@ -6,12 +6,12 @@ part of 'screenshot_list_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$screenshotListHash() => r'89a0534662f7e6d6951f0395eb72fdef20c9f07a';
+String _$screenshotListHash() => r'1648b5348b91cb80d159e66095adb5f88ce410ff';
 
 /// See also [ScreenshotList].
 @ProviderFor(ScreenshotList)
 final screenshotListProvider =
-    AutoDisposeNotifierProvider<ScreenshotList, List<Uint8List>>.internal(
+    NotifierProvider<ScreenshotList, List<Uint8List>>.internal(
   ScreenshotList.new,
   name: r'screenshotListProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -21,6 +21,6 @@ final screenshotListProvider =
   allTransitiveDependencies: null,
 );
 
-typedef _$ScreenshotList = AutoDisposeNotifier<List<Uint8List>>;
+typedef _$ScreenshotList = Notifier<List<Uint8List>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

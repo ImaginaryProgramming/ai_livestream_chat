@@ -6,7 +6,7 @@ part of 'auto_chat_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$autoChatHash() => r'c844b8b71eebddb384aff1b7a6c500fa053410f8';
+String _$autoChatHash() => r'18af4b5598650f6255d6f42820371f3a037b660b';
 
 /// When [state] is true, automatically takes screenshots and sends them to Gemini.
 ///
