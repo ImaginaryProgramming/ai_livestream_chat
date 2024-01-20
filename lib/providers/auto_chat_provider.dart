@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:ai_livestream_chat/providers/gemini_chat_provider.dart';
 import 'package:ai_livestream_chat/providers/gemini_request_provider.dart';
 import 'package:ai_livestream_chat/providers/screenshot_list_provider.dart';
@@ -10,12 +12,12 @@ part 'auto_chat_provider.g.dart';
 /// Use [start] and [stop] to toggle.
 @riverpod
 class AutoChat extends _$AutoChat {
-  static const _errorDelay = Duration(seconds: 5);
+  static const _loopDelay = Duration(seconds: 3);
 
   void start() {
     if (!state) {
       state = true;
-      run();
+      _runLoop();
     }
   }
 
@@ -23,19 +25,24 @@ class AutoChat extends _$AutoChat {
     state = false;
   }
 
-  Future<void> run() async {
+  Future<void> _runLoop() async {
     while (state) {
-      try {
-        final request = ref.read(geminiRequestProvider);
+      unawaited(_runInternal());
+      await Future.delayed(_loopDelay);
+    }
+  }
 
-        await ref.read(screenshotListProvider.notifier).takeScreenshot();
-        await ref.read(geminiChatProvider.notifier).sendMessage(request);
-      } catch (e) {
-        print("_screenshotCycle caught an exception: $e");
-        await Future.delayed(_errorDelay);
-      } finally {
-        ref.read(screenshotListProvider.notifier).resetState();
-      }
+  Future<void> _runInternal() async {
+    try {
+      final request = ref.read(geminiRequestProvider);
+
+      await ref.read(screenshotListProvider.notifier).takeScreenshot();
+      final images = ref.read(screenshotListProvider);
+      ref.read(screenshotListProvider.notifier).resetState();
+
+      await ref.read(geminiChatProvider.notifier).sendMessage(request, images);
+    } catch (e) {
+      print("_runInternal caught an exception: $e");
     }
   }
 

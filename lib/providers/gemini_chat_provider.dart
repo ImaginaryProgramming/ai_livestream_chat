@@ -1,6 +1,6 @@
 import 'dart:async';
+import 'dart:typed_data';
 
-import 'package:ai_livestream_chat/providers/screenshot_list_provider.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -8,11 +8,9 @@ part 'gemini_chat_provider.g.dart';
 
 @riverpod
 class GeminiChat extends _$GeminiChat {
-  static const _delayBetweenSpacedMessages = Duration(milliseconds: 1000);
+  static const _delayBetweenSpacedMessages = Duration(milliseconds: 500);
 
-  Future<void> sendMessage(String message) async {
-    final images = ref.read(screenshotListProvider);
-
+  Future<void> sendMessage(String message, List<Uint8List> images) async {
     if (message.isEmpty) {
       print("Message is empty, not sending.");
       return;

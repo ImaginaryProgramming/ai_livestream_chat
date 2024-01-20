@@ -145,7 +145,7 @@ class _AiScreenState extends ConsumerState<AiScreen> {
           FilledButton(
             onPressed: () => ref
                 .read(geminiChatProvider.notifier)
-                .sendMessage(_textController.text),
+                .sendMessage(_textController.text, images),
             child: const Text("Send"),
           ),
           const SizedBox(height: 8),
